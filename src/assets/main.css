@@ -1,8 +1,30 @@
 @import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
+
+.u-100 { font-weight: 100; }
+.u-200 { font-weight: 200; }
+.u-300 { font-weight: 300; }
+.u-400 { font-weight: 400; }
+.u-500 { font-weight: 500; }
+.u-600 { font-weight: 600; }
+.u-700 { font-weight: 700; }
+.u-800 { font-weight: 800; }
+.u-900 { font-weight: 900; }
+
+.fs-xs { font-size: 0.75rem; }   /* 12px */
+.fs-sm { font-size: 0.875rem; }  /* 14px */
+.fs-md { font-size: 1rem; }      /* 16px */
+.fs-lg { font-size: 1.25rem; }   /* 20px */
+.fs-xl { font-size: 1.5rem; }    /* 24px */
+.fs-2xl { font-size: 2rem; }     /* 32px */
+.fs-3xl { font-size: 3rem; }     /* 48px */
