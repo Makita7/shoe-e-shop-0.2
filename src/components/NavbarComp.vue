@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 import { defineComponent } from 'vue';
 import { RouterLink } from 'vue-router';
 
@@ -21,15 +21,15 @@ defineComponent({
       <RouterLink class="links" to="/kids">Kids</RouterLink>
     </nav>
     <v-col class="d-flex justify-end">
-      <p class="pl-4">icon cart</p>
-      <p class="pl-4">icon user</p>
+      <v-icon class="ml-4">mdi-cart</v-icon>
+      <v-icon class="ml-4">mdi-account</v-icon>
     </v-col>
   </header>
 </template>
 
 <style scoped>
 header {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px gray;
 }
 
 .logo {

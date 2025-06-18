@@ -10,8 +10,13 @@ defineComponent({
 
 <template>
   <NavbarComp />
-  <main>
-    <RouterView />
+  <main class="d-flex">
+    <v-col cols="3" style="border-right: solid 2px gray; min-height: 80vh;">
+      side
+    </v-col>
+    <v-col style="padding: 0;">
+      <RouterView />
+    </v-col>
   </main>
 </template>
 
