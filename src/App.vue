@@ -2,16 +2,20 @@
 import NavbarComp from './components/NavbarComp.vue';
 import { defineComponent } from 'vue';
 import { RouterView } from 'vue-router';
+import { useRoute } from 'vue-router';
 
 defineComponent({
   name: 'App',
 })
+
+const route = useRoute();
+
 </script>
 
 <template>
   <NavbarComp />
   <main class="d-flex">
-    <v-col cols="3" style="border-right: solid 2px gray; min-height: 80vh;">
+    <v-col v-if="route.path !== '/'" cols="3" style="border-right: solid 2px gray; min-height: 80vh;">
       side
     </v-col>
     <v-col style="padding: 0;">
