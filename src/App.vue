@@ -3,6 +3,7 @@ import NavbarComp from './components/NavbarComp.vue';
 import { defineComponent } from 'vue';
 import { RouterView } from 'vue-router';
 import { useRoute } from 'vue-router';
+import FilterbarComp from './components/FilterbarComp.vue';
 
 defineComponent({
   name: 'App',
@@ -10,16 +11,20 @@ defineComponent({
 
 const route = useRoute();
 
+
 </script>
 
 <template>
   <NavbarComp />
   <main class="d-flex">
-    <v-col v-if="route.path !== '/'" cols="3" style="border-right: solid 2px gray; min-height: 80vh;">
-      side
+    <v-col v-if="route.path !== '/'" cols="3" class="text-capitalize"
+      style="border-right: solid 2px gray; min-height: 80vh;">
+      <FilterbarComp />
     </v-col>
     <v-col style="padding: 0;">
-      <RouterView />
+      <Transition name="fade" mode="out-in">
+        <RouterView />
+      </Transition>
     </v-col>
   </main>
 </template>
