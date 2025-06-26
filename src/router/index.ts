@@ -30,9 +30,19 @@ const router = createRouter({
       component: () => import('../pages/KidsPage.vue'),
     },
     {
-      path: '/:id',
+      path: '/profile',
+      name: 'profile',
+      component: () => import('../pages/ProfilePage.vue'),
+    },
+    {
+      path: '/shoe/:id',
       name: 'shoeDetails',
       component: () => import('../pages/ShoeDetailPage.vue'),
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('../pages/NotFoundPage.vue.vue'),
     },
   ],
 })

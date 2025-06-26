@@ -17,8 +17,8 @@ const route = useRoute();
 <template>
   <NavbarComp />
   <main class="d-flex">
-    <v-col v-if="route.path !== '/'" cols="3" class="text-capitalize"
-      style="border-right: solid 1px var(--borders); min-height: 80vh;">
+    <v-col v-if="route.path === '/men' || route.path === '/women' || route.path === '/kids' || route.path === '/unisex'"
+      cols="3" class="text-capitalize" style="border-right: solid 1px var(--borders); min-height: 80vh;">
       <FilterbarComp />
     </v-col>
     <v-col style="padding: 0;">
