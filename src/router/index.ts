@@ -33,6 +33,23 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: () => import('../pages/ProfilePage.vue'),
+      children: [
+        {
+          path: 'profileInfo',
+          name: 'profileInfo',
+          component: () => import('../components/profileComponents/ProfileInfoComp.vue'),
+        },
+        {
+          path: 'orderHistory',
+          name: 'orderHistory',
+          component: () => import('../components/profileComponents/OrderHistoryComp.vue'),
+        },
+        {
+          path: 'wishlist',
+          name: 'wishlist',
+          component: () => import('../components/profileComponents/WishlistComp.vue'),
+        },
+      ]
     },
     {
       path: '/shoe/:id',

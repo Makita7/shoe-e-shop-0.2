@@ -26,23 +26,18 @@ const toggleCart = () => cartDialog.value = !cartDialog.value;
     </nav>
     <v-col class="d-flex justify-end">
       <v-icon @click="toggleCart" class="icon ml-4">mdi-cart</v-icon>
-      <!-- <v-dialog v-model="cartDialog">
-        <v-card class="dialogCard" width="40rem">
-          hi
-        </v-card>
-      </v-dialog> -->
       <div v-if="cartDialog" class="overlay">
-        <v-card variant="outlined" class="dialogCard" width="30rem">
+        <v-card class="dialogCard" width="30rem">
           <v-card-title class="d-flex justify-space-between">
             Cart:
             <p v-if="closeHover" class="mb-0">Close</p>
-            <v-icon @click="toggleCart" style="font-size: 1.5rem;">mdi-close</v-icon>
+            <v-icon @click="toggleCart" class="icon" style="font-size: 1.5rem;">mdi-close</v-icon>
           </v-card-title>
           <v-card-text>fdfdf</v-card-text>
         </v-card>
       </div>
 
-      <RouterLink to="/profile">
+      <RouterLink to="/profile/profileInfo">
         <v-icon class="icon ml-4">mdi-account</v-icon>
       </RouterLink>
     </v-col>
@@ -72,14 +67,6 @@ header {
 
 .active-link {
   font-weight: bold;
-}
-
-.icon {
-  color: black;
-}
-
-.icon:hover {
-  color: var(--mid-green);
 }
 
 .overlay {
