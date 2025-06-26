@@ -5,7 +5,7 @@ export const useFiltersStore = defineStore('filters', () => {
 
   const universalFilters = ref({
     size: ["US", "UK", "EU"],
-    color: ["Black", "White", "Gray", "Red", "Blue", "Green", "Pink", "Multicolor"],
+    color: ["#0056ab", "white", "gray", "red", "green", "pink"],
     brand: ["Nike", "Adidas", "Puma", "Vans", "Reebok", "Converse", "Other"],
     priceRange: ["0-50", "50-100", "100-150", "150+", "custom"],
     sortBy: ["Newest", "Price Low-High", "Price High-Low", "Best Sellers", "Trending", "Discount"],

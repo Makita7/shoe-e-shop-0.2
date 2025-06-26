@@ -29,7 +29,7 @@ defineComponent({
 
 <style scoped>
 header {
-  border-bottom: solid 1px gray;
+  border-bottom: solid 1px var(--borders);
 }
 
 .logo {

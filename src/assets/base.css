@@ -1,4 +1,8 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --white: white;
+  --borders: #d3d3d3;
+  --light-blue: #dae6ef;
+  --light-green: #d1dbc8;
+  --dark-green: #2a3323;
 }

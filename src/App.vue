@@ -18,7 +18,7 @@ const route = useRoute();
   <NavbarComp />
   <main class="d-flex">
     <v-col v-if="route.path !== '/'" cols="3" class="text-capitalize"
-      style="border-right: solid 2px gray; min-height: 80vh;">
+      style="border-right: solid 1px var(--borders); min-height: 80vh;">
       <FilterbarComp />
     </v-col>
     <v-col style="padding: 0;">
