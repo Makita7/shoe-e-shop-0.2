@@ -11,7 +11,7 @@ defineComponent({
 <template>
   <header class="d-flex justify-between align-center">
     <v-col>
-      <p class="logo pl-1">E-SHOP</p>
+      <RouterLink class="pl-1 links logo prevent-select" to="/" active-class="active-link">E-SHOP</RouterLink>
     </v-col>
     <nav class="d-flex">
       <RouterLink class="links" to="/" active-class="active-link">Start</RouterLink>
@@ -42,6 +42,10 @@ header {
   text-decoration: none;
   color: black;
   padding: 0 0.5rem;
+}
+
+.links:hover {
+  color: var(--mid-green);
 }
 
 .active-link {

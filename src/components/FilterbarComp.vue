@@ -3,9 +3,11 @@ import { defineComponent, ref, watch, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useFiltersStore } from '@/stores/filters';
 
-defineEmits({
+defineComponent({
   name: 'FilterbarComp',
 })
+
+const route = useRoute();
 
 const filterStore = useFiltersStore();
 interface UniversalFilters {
@@ -27,15 +29,13 @@ const universalFilters = ref<UniversalFilters>({
 });
 const filters = ref([]);
 
-const route = useRoute();
-
 onMounted(() => {
   universalFilters.value = filterStore.getFilter('universalFilters');
   filters.value = filterStore.getFilter(route.path.split('/')[1]);
 }),
 
   watch(route, async (newRoute) => {
-    filters.value = filterStore.getFilter(route.path.split('/')[1])
+    filters.value = filterStore.getFilter(route.path.split('/')[1]);
   })
 
 const activeSize = ref();
@@ -123,7 +123,7 @@ function clearFilter() {
   <!-- brand -->
   <div class="d-flex flex-wrap mb-6 mt-4">
     <p class="font-weight-bold pr-2 prevent-select text-uppercase">Brands:</p>
-    <p v-for="b in universalFilters.brand" :key="s" @click="toggleBrand(b)" class="filter-chip prevent-select mx-1"
+    <p v-for="b in universalFilters.brand" :key="b" @click="toggleBrand(b)" class="filter-chip prevent-select mx-1"
       :class="activeBrand.indexOf(b) !== -1 ? 'active' : ''">{{ b }}</p>
   </div>
 
