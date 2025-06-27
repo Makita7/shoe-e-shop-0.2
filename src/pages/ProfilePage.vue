@@ -17,7 +17,9 @@ defineComponent({
     </v-col>
 
     <v-col>
-      <RouterView class="mt-4" />
+      <Transition name="fade">
+        <RouterView class="mt-4" />
+      </Transition>
     </v-col>
   </div>
 </template>

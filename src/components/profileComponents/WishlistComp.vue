@@ -8,7 +8,7 @@ defineComponent({
 </script>
 
 <template>
-  <div class="d-flex flex-wrap">
-    WishlistComp
+  <div class="">
+    <h3 class="text-center mb-2" style="color: var(--mid-green);">Wishlist</h3>
   </div>
 </template>

@@ -8,7 +8,12 @@ defineComponent({
 
 const cartDialog = ref(false);
 
-const toggleCart = () => cartDialog.value = !cartDialog.value;
+const toggleCart = () => {
+  cartDialog.value = !cartDialog.value;
+  closeHover.value = false;
+};
+
+const closeHover = ref(false);
 
 </script>
 
@@ -27,13 +32,32 @@ const toggleCart = () => cartDialog.value = !cartDialog.value;
     <v-col class="d-flex justify-end">
       <v-icon @click="toggleCart" class="icon ml-4">mdi-cart</v-icon>
       <div v-if="cartDialog" class="overlay">
-        <v-card class="dialogCard" width="30rem">
+        <v-card class="dialogCard" width="30rem" elevation="0">
           <v-card-title class="d-flex justify-space-between">
             Cart:
-            <p v-if="closeHover" class="mb-0">Close</p>
-            <v-icon @click="toggleCart" class="icon" style="font-size: 1.5rem;">mdi-close</v-icon>
+            <div class="d-flex align-center">
+              <p v-if="closeHover" class="mb-0" :class="{ hoverStyle: closeHover }">Close</p>
+              <v-icon @click="toggleCart" @mouseover="closeHover = true" @mouseout="closeHover = false" class="icon"
+                style="font-size: 1.5rem;">mdi-close</v-icon>
+            </div>
           </v-card-title>
-          <v-card-text>fdfdf</v-card-text>
+          <v-card-text>
+            <div class="d-flex align-center justify-space-between mt-2">
+              <div class="d-flex align-center">
+                <p>img</p>
+                <div class="ml-4">
+                  <p>Shoe Name</p>
+                  <p>Size:</p>
+                </div>
+              </div>
+              <div class="d-flex align-center">
+                <v-btn icon="mdi-plus" variant="flat" density="compact" color="var(--light-green)" class="mx-2" />
+                <p class="amount">0</p>
+                <v-btn icon="mdi-minus" variant="flat" density="compact" color="var(--light-green)" class="mx-2" />
+                <v-icon class="icon ml-4">mdi-delete</v-icon>
+              </div>
+            </div>
+          </v-card-text>
         </v-card>
       </div>
 
@@ -93,5 +117,15 @@ header {
   top: 12%;
   right: 10%;
   background-color: white;
+}
+
+.amount {
+  width: 2rem;
+  text-align: center;
+}
+
+.hoverStyle {
+  color: gray;
+  font-size: 0.9rem;
 }
 </style>

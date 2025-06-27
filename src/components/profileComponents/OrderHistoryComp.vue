@@ -10,22 +10,33 @@ defineComponent({
 <template>
   <!-- TODO: hacer que este item de order history sea uno solo y reautilizarlo en el cart y uitar en esta version el poder agregar o quitar elementos xq solo deberia mostrar cuantos ya se habian comprado en el pasado -->
   <div class="">
-    <h3 class="text-center">Order History</h3>
-    <div class="d-flex align-center justify-space-between">
-      <div class="d-flex align-center">
-        <p>img</p>
-        <div class="ml-4">
-          <p>Shoe Name</p>
-          <p>Size:</p>
-        </div>
-      </div>
-      <div class="d-flex">
-        <v-btn icon="mdi-plus" variant="flat" density="compact" color="var(--light-green)" class="mx-2" />
-        <p class="amount">0</p>
-        <v-btn icon="mdi-minus" variant="flat" density="compact" color="var(--light-green)" class="mx-2" />
-        <v-icon class="icon ml-4">mdi-delete</v-icon>
-      </div>
-    </div>
+    <h3 class="text-center mb-2" style="color: var(--mid-green);">Order History</h3>
+
+    <v-expansion-panels elevation="0" rounded="lg">
+      <v-expansion-panel v-for="i in 4" :key="i">
+        <v-expansion-panel-title>
+          <v-row class="d-flex justify-space-between pr-8 align-center">
+            <div>
+              <p>Date:</p>
+              <p>28/05/25</p>
+            </div>
+            <div>
+              <p>Address:</p>
+              <p>13th Street, New York, USA</p>
+            </div>
+            <p>Status: Delived</p>
+            <p>Total: $9000</p>
+          </v-row>
+        </v-expansion-panel-title>
+        <v-expansion-panel-text style="background-color: #f5f9f1;">
+          <v-row class="align-center justify-space-between py-2 px-4">
+            <p>img</p>
+            <p>Shoe Name</p>
+            <p>Size:</p>
+          </v-row>
+        </v-expansion-panel-text>
+      </v-expansion-panel>
+    </v-expansion-panels>
   </div>
 </template>
 
