@@ -28,11 +28,15 @@ defineComponent({
             <p>Total: $9000</p>
           </v-row>
         </v-expansion-panel-title>
-        <v-expansion-panel-text style="background-color: #f5f9f1;">
-          <v-row class="align-center justify-space-between py-2 px-4">
-            <p>img</p>
-            <p>Shoe Name</p>
+        <v-expansion-panel-text v-for="i in 4" :key="i" style="background-color: #f5f9f1;">
+          <v-row class="align-center justify-space-between pt-4 pb-2 px-4">
+            <div class="d-flex align-center">
+              <p>img</p>
+              <p class="ml-4 font-weight-bold">Shoe Name</p>
+            </div>
+            <p>Brand:</p>
             <p>Size:</p>
+            <p>Price:</p>
           </v-row>
         </v-expansion-panel-text>
       </v-expansion-panel>
